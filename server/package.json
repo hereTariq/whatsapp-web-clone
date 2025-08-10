@@ -6,8 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "node index",
-    "dev": "nodemon index",
-    "sync": "node scripts/processData"
+    "dev": "nodemon index"
   },
   "dependencies": {
     "cors": "^2.8.5",

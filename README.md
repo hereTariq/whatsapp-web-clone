@@ -58,12 +58,6 @@ PORT=6009
 CLIENT_URL=http://localhost:5173
 ```
 
-#### Sync JSON Data to MongoDB
-
-```bash
-yarn sync
-```
-
 #### Start Backend Server
 ```bash
 yarn dev
