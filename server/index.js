@@ -22,9 +22,12 @@ app.use(cors({ origin: process.env.CLIENT_URL }));
     console.log('Data processing completed');
   } catch (error) {
     console.error('Data processing failed:', error);
-    process.exit(1);
   }
 })();
+
+app.get('/', (req, res) => {
+  res.send("Hello World!");
+})
 
 app.use('/api', apiRoutes)
 
