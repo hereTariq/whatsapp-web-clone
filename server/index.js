@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import connectDB from './config/db.js';
 import apiRoutes from './routes/api.js'
+import { processAllData } from './scripts/processData.js';
 
 dotenv.config();
 
@@ -14,7 +15,16 @@ app.use(express.json());
 app.use(cors({ origin: process.env.CLIENT_URL }));
 
 // database connection
-connectDB();
+(async () => {
+  try {
+    await connectDB();
+    await processAllData();
+    console.log('Data processing completed');
+  } catch (error) {
+    console.error('Data processing failed:', error);
+    process.exit(1);
+  }
+})();
 
 app.use('/api', apiRoutes)
 

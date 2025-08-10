@@ -79,6 +79,13 @@ yarn dev
 cd ../frontend
 ```
 
+#### Configure Environment
+Create a `.env` file inside the `frontend` directory:
+
+```env
+VITE_API_BASE_URL=http://localhost:6009/api
+```
+
 #### Install Dependencies
 ```bash
 yarn install

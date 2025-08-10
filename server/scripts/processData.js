@@ -2,10 +2,9 @@ import fs from 'fs';
 import path from 'path';
 import dotenv from 'dotenv';
 import Message from '../models/message.js';
-import connectDB from '../config/db.js'
 dotenv.config();
 
-async function processAllData() {
+export async function processAllData() {
   try {
     const dataDir = path.join(process.cwd(), 'sample_payloads');
     const files = fs.readdirSync(dataDir);
@@ -118,14 +117,3 @@ function parseDate(dateString) {
   return null;
 }
 
-(async () => {
-  try {
-    await connectDB();
-    await processAllData();
-    console.log('Data processing completed');
-    process.exit(0);
-  } catch (error) {
-    console.error('Data processing failed:', error);
-    process.exit(1);
-  }
-})();
