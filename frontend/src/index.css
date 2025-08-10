@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+.bg-whatsapp-green { background-color: #25D366; }
+.bg-whatsapp-light { background-color: #DCF8C6; }
+.bg-whatsapp-dark { background-color: #075E54; }
+.bg-whatsapp-darker { background-color: #128C7E; }
+
+/* Custom Styles */
+body {
+  @apply m-0 font-sans antialiased;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  @apply w-1.5;
+}
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-400 rounded-full;
+}
